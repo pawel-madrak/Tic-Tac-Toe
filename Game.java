@@ -150,8 +150,30 @@ public class Game {
      */
     public String checkGameWinner(char [][]grid){
         String result = "None";
+        int i;
+        int j;
         //Student code goes here ...
+        if ((grid[0][0]==grid[0][1] && grid[0][1]==grid[0][2] && grid[0][2]=='x') || (grid[0][0]==grid[1][0] && grid[1][0]==grid[2][0] && grid[2][0]=='x') || (grid[0][2]==grid[1][2] && grid[1][2]==grid[2][2] && grid[2][2]=='x') ||
+                (grid[2][0]==grid[2][1] && grid[2][1]==grid[2][2] && grid[2][2]=='x') || (grid[0][0]==grid[1][1] && grid[1][1]==grid[2][2] && grid[2][2]=='x') || (grid[0][2]==grid[1][1] && grid[1][1]==grid[2][0] && grid[2][0]=='x')
+                || (grid[0][1]==grid[1][1] && grid[1][1]==grid[2][1] && grid[2][1]=='x') || (grid[1][0]==grid[1][1] && grid[1][1]==grid[1][2] && grid[1][2]=='x')) {
+        result="x is winner";
+        }
+        else if ((grid[0][0]==grid[0][1] && grid[0][1]==grid[0][2] && grid[0][2]=='o') || (grid[0][0]==grid[1][0] && grid[1][0]==grid[2][0] && grid[2][0]=='o') || (grid[0][2]==grid[1][2] && grid[1][2]==grid[2][2] && grid[2][2]=='o') ||
+                (grid[2][0]==grid[2][1] && grid[2][1]==grid[2][2] && grid[2][2]=='o') || (grid[0][0]==grid[1][1] && grid[1][1]==grid[2][2] && grid[2][2]=='o') || (grid[0][2]==grid[1][1] && grid[1][1]==grid[2][0] && grid[2][0]=='o')
+                || (grid[0][1]==grid[1][1] && grid[1][1]==grid[2][1] && grid[2][1]=='o') || (grid[1][0]==grid[1][1] && grid[1][1]==grid[1][2] && grid[1][2]=='o')){
+            result="o is winner";
+        }
+         else if (grid[0][0] !='-' && grid[0][1] !='-' && grid[0][2] !='-' && grid[1][0] !='-' && grid[1][1] !='-' && grid[1][2] !='-' &&
+                grid[2][0] !='-' && grid[2][1] !='-' && grid[2][2] !='-'){
+             result="tie";
+
+
+        }
+
+
+
         return result;
+
     }
 
     /**
